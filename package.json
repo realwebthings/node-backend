@@ -1,0 +1,17 @@
+{
+  "name": "node-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/realwebthings/node-backend",
+  "author": "realwebthings <realwebthings@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "ws": "^8.18.0"
+  },"scripts": {
+    "dev": "nodemon index.js",
+    "dev-express": "nodemon express/index.js"
+  }
+}
