@@ -1,10 +1,16 @@
 import http from 'http';
-import assert from 'assert/strict';
+
+import { getAllMethods } from './modules/helper.js';
+
 const hostname = process.env.HOSTNAME;
 const port = process.env.PORT;
 
 
+
 const server = http.createServer((req, res) => {
+    const { url } = req;
+    console.log(getAllMethods(req))
+    console.log("===========", url)
     res.statusCode = 200;
     res.setHeader('ContentType', 'text/plain');
     res.end('Hello World!');
@@ -13,12 +19,5 @@ const server = http.createServer((req, res) => {
 
 
 server.listen(port, hostname, (url) =>{
-    assert.equal(url, undefined);
-    const a = new assert.AssertionError({
-        actual: url,
-        expected: 'undefined',
-        operator: 'equal'
-    });
-    console.log(a);
     console.log(`Node server is running on ${url}`);
 })
